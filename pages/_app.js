@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <div>
-      <header className="app-header fixed-top">
+        <header className="app-header fixed-top">
           <div className="app-header-inner">
             <div className="container-fluid py-2">
               <div className="app-header-content">
@@ -45,11 +45,11 @@ function MyApp({ Component, pageProps }) {
                       </svg>
                     </a>
                   </div>
-                  
+
                   <div className="search-mobile-trigger d-sm-none col">
                     <i className="search-mobile-trigger-icon fas fa-search" />
                   </div>
-                  
+
                   <div className="app-search-box col">
                     <form className="app-search-form">
                       <input
@@ -67,21 +67,21 @@ function MyApp({ Component, pageProps }) {
                       </button>
                     </form>
                   </div>
-                
-                 
-                  
                 </div>
-                
               </div>
-              
             </div>
-            
           </div>
-          
-          <SidePanel/>
+
+          <SidePanel />
         </header>
 
         <Component {...pageProps} />
+        <footer className="text-center bg-dark">
+          <p>
+            Developed By{" "}
+            <span style={{ fontWeight: "bold" }}> Digitalprenure.in</span>
+          </p>
+        </footer>
       </div>
 
       <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" />
