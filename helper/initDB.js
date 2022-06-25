@@ -6,7 +6,7 @@ function initDB(){
         return
     }
 
-    mongoose.connect("mongodb://localhost:27017/stepdb",{
+    mongoose.connect("mongodb://localhost:27017/stepcounterdb",{
         useNewUrlParser : true,
         useUnifiedTopology:true
 

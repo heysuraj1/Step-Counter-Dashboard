@@ -1,7 +1,16 @@
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const SidePanel = () => {
+  const router = useRouter();
+
+  function isActive(route) {
+    if (route == router.pathname) {
+      return "active";
+    } else return "";
+  }
+
   return (
     <div id="app-sidepanel" className="app-sidepanel">
       <div id="sidepanel-drop" className="sidepanel-drop" />
@@ -27,7 +36,8 @@ const SidePanel = () => {
             <Link href="/">
               <li className="nav-item hovme">
                 {/*//Bootstrap Icons: https://icons.getbootstrap.com/ */}
-                <a className="nav-link active">
+                {/* <a className="nav-link active"> */}
+                <a className={`nav-link ${isActive("/")}`}>
                   <span className="nav-icon">
                     <svg
                       width="1em"
@@ -54,7 +64,7 @@ const SidePanel = () => {
             <Link href="/Users">
               <li className="nav-item hovme">
                 {/*//Bootstrap Icons: https://icons.getbootstrap.com/ */}
-                <a className="nav-link">
+                <a className={`nav-link ${isActive("/Users")}`}>
                   <span className="nav-icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +84,7 @@ const SidePanel = () => {
             <Link href="/Withdrawal_Requests">
               <li className="nav-item hovme">
                 {/*//Bootstrap Icons: https://icons.getbootstrap.com/ */}
-                <a className="nav-link">
+                <a className={`nav-link ${isActive("/Withdrawal_Requests")}`}>
                   <span className="nav-icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -97,10 +107,30 @@ const SidePanel = () => {
                 </a>
               </li>
             </Link>
+            <Link href="/Staff">
+              <li className="nav-item hovme">
+                {/*//Bootstrap Icons: https://icons.getbootstrap.com/ */}
+                <a className={`nav-link ${isActive("/Staff")}`}>
+                  <span className="nav-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-person-lines-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z" />
+                    </svg>
+                  </span>
+                  <span className="nav-link-text">Staff</span>
+                </a>
+              </li>
+            </Link>
             <Link href="/Payments">
               <li className="nav-item hovme">
                 {/*//Bootstrap Icons: https://icons.getbootstrap.com/ */}
-                <a className="nav-link">
+                <a className={`nav-link ${isActive("/Payments")}`}>
                   <span className="nav-icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -120,7 +150,7 @@ const SidePanel = () => {
 
             <Link href="/Notifications">
               <li className="nav-item hovme">
-                <a className="nav-link">
+                <a className={`nav-link ${isActive("/Notifications")}`}>
                   <span className="nav-icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -140,7 +170,7 @@ const SidePanel = () => {
 
             <Link href="/Help">
               <li className="nav-item hovme">
-                <a className="nav-link">
+                <a className={`nav-link ${isActive("/Help")}`}>
                   <span className="nav-icon">
                     <svg
                       width="1em"
