@@ -13,6 +13,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="favicon.ico" />
         <link id="theme-style" rel="stylesheet" href="css/portal.css" />
+        
       </Head>
 
       <div>
