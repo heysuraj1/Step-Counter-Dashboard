@@ -77,12 +77,7 @@ function MyApp({ Component, pageProps }) {
         </header>
 
         <Component {...pageProps} />
-        <footer className="text-center bg-dark">
-          <p>
-            Developed By{" "}
-            <span style={{ fontWeight: "bold" }}> Digitalprenure.in</span>
-          </p>
-        </footer>
+       
       </div>
 
       <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" />
