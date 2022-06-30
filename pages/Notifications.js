@@ -6,7 +6,7 @@ const Notifications = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/SendNotifications")
+      .get("https://step-counter-dashboard.vercel.app/api/SendNotifications")
       .then((acc) => {
         setShowDatas(true);
         return setDatas(acc.data);

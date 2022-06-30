@@ -8,7 +8,7 @@ const Withdrawal_Requests = () => {
   useEffect(() => {
     
     axios
-      .get("http://localhost:3000/api/WithdrawRequest")
+      .get("https://step-counter-dashboard.vercel.appw/api/WithdrawRequest")
       .then((acc) => {
         setShowData(true)
         return setDatas(acc.data);
