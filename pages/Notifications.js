@@ -1,6 +1,21 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 const Notifications = () => {
+  const [datas, setDatas] = useState();
+  const [showDatas, setShowDatas] = useState(false);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/api/SendNotifications")
+      .then((acc) => {
+        setShowDatas(true);
+        return setDatas(acc.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <div className="container">
       <div style={{ marginTop: 100 }}>
@@ -26,22 +41,36 @@ const Notifications = () => {
         </div>
       </div>
 
-
-      
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
+      <div className="container mt-5">
+        {showDatas ? (
+          <>
+          <div className="card m-4">
+                  <div className="row text-center">
+                    <div style={{fontWeight:"bold",fontSize:15}}  className="col">User Unique Id</div>
+                    <div style={{fontWeight:"bold",fontSize:15}}  className="col">Notification Message</div>
+                    <div  style={{fontWeight:"bold",fontSize:15}} className="col">Updated At</div>
+                    <div  style={{fontWeight:"bold",fontSize:15}} className="col">Created At</div>
+                    <div  style={{fontWeight:"bold",fontSize:15}} className="col"></div>
+                  </div>
+                </div>
+            {datas.map((hit) => {
+              return (
+                <div className="card m-4">
+                  <div className="row text-center">
+                    <div className="col">{hit.userUniqueId}</div>
+                    <div className="col">{hit.notificationMessage.slice(0,10)}...</div>
+                    <div className="col">{hit.updatedAt}</div>
+                    <div className="col">{hit.createdAt}</div>
+                    <div className="col"><button className="btn btn-primary text-white">Edit</button></div>
+                  </div>
+                </div>
+              );
+            })}
+          </>
+        ) : (
+          <></>
+        )}
+      </div>
     </div>
   );
 };

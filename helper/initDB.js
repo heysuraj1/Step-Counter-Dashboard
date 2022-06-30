@@ -6,7 +6,7 @@ function initDB(){
         return
     }
 
-    mongoose.connect("mongodb://localhost:27017/stepcounterdb",{
+    mongoose.connect("mongodb+srv://myclientdatabse:exU9ShwP4YRG11WD@cluster0.rn6wv.mongodb.net/?retryWrites=true&w=majority",{
         useNewUrlParser : true,
         useUnifiedTopology:true
 
