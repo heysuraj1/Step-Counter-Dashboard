@@ -55,7 +55,7 @@ const Notifications = () => {
                 </div>
             {datas.map((hit) => {
               return (
-                <div className="card m-4">
+                <div className="card m-4" key={hit.id}>
                   <div className="row text-center">
                     <div className="col">{hit.userUniqueId}</div>
                     <div className="col">{hit.notificationMessage.slice(0,10)}...</div>
