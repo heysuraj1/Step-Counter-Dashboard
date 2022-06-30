@@ -18,7 +18,7 @@ const index = () => {
                     <div className="col-12 col-lg-9">
                       <div>
                         Portal is a free Bootstrap 5 admin dashboard template.
-                        The design is simple, clean and modular so it's a great
+                        The design is simple, clean and modular so its a great
                         base for building any modern web app.
                       </div>
                     </div>
