@@ -71,7 +71,7 @@ const SidePanel = () => {
                       width="16"
                       height="16"
                       fill="currentColor"
-                      class="bi bi-person"
+                      className="bi bi-person"
                       viewBox="0 0 16 16"
                     >
                       <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
@@ -91,7 +91,7 @@ const SidePanel = () => {
                       width="16"
                       height="16"
                       fill="currentColor"
-                      class="bi bi-cash-coin"
+                      className="bi bi-cash-coin"
                       viewBox="0 0 16 16"
                     >
                       <path
@@ -117,7 +117,7 @@ const SidePanel = () => {
                       width="16"
                       height="16"
                       fill="currentColor"
-                      class="bi bi-person-lines-fill"
+                      className="bi bi-person-lines-fill"
                       viewBox="0 0 16 16"
                     >
                       <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z" />
@@ -137,7 +137,7 @@ const SidePanel = () => {
                       width="16"
                       height="16"
                       fill="currentColor"
-                      class="bi bi-currency-bitcoin"
+                      className="bi bi-currency-bitcoin"
                       viewBox="0 0 16 16"
                     >
                       <path d="M5.5 13v1.25c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25V13h.5v1.25c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25V13h.084c1.992 0 3.416-1.033 3.416-2.82 0-1.502-1.007-2.323-2.186-2.44v-.088c.97-.242 1.683-.974 1.683-2.19C11.997 3.93 10.847 3 9.092 3H9V1.75a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25V3h-.573V1.75a.25.25 0 0 0-.25-.25H5.75a.25.25 0 0 0-.25.25V3l-1.998.011a.25.25 0 0 0-.25.25v.989c0 .137.11.25.248.25l.755-.005a.75.75 0 0 1 .745.75v5.505a.75.75 0 0 1-.75.75l-.748.011a.25.25 0 0 0-.25.25v1c0 .138.112.25.25.25L5.5 13zm1.427-8.513h1.719c.906 0 1.438.498 1.438 1.312 0 .871-.575 1.362-1.877 1.362h-1.28V4.487zm0 4.051h1.84c1.137 0 1.756.58 1.756 1.524 0 .953-.626 1.45-2.158 1.45H6.927V8.539z" />
@@ -157,7 +157,7 @@ const SidePanel = () => {
                       width="16"
                       height="16"
                       fill="currentColor"
-                      class="bi bi-bell-fill"
+                      className="bi bi-bell-fill"
                       viewBox="0 0 16 16"
                     >
                       <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
@@ -205,7 +205,7 @@ const SidePanel = () => {
                       width="16"
                       height="16"
                       fill="currentColor"
-                      class="bi bi-box-arrow-right"
+                      className="bi bi-box-arrow-right"
                       viewBox="0 0 16 16"
                     >
                       <path
