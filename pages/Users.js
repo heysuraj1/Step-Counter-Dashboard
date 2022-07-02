@@ -7,7 +7,7 @@ const Users = () => {
 
   useEffect(() => {
     axios
-      .get("https://step-counter-dashboard.vercel.app/api/AllUsers")
+      .get("/api/AllUsers")
       .then((acc) => {
         setShowData(true);
 
