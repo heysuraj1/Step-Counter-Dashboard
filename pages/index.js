@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const index = () => {
@@ -13,21 +14,18 @@ const index = () => {
             >
               <div className="inner">
                 <div className="app-card-body p-3 p-lg-4">
-                  <h3 className="mb-3">Welcome, developer!</h3>
+                  <h3 className="mb-3">Welcome, Admin!</h3>
                   <div className="row gx-5 gy-3">
                     <div className="col-12 col-lg-9">
                       <div>
-                        Portal is a free Bootstrap 5 admin dashboard template.
-                        The design is simple, clean and modular so its a great
-                        base for building any modern web app.
+                        Welcome To Your Admin Dashboard. Let's Manage All The
+                        Requests And Make Something Big
                       </div>
                     </div>
 
                     <div className="col-12 col-lg-3">
-                      <a
-                        className="btn app-btn-primary"
-                        href="https://themes.3rdwavemedia.com/bootstrap-templates/admin-dashboard/portal-free-bootstrap-admin-dashboard-template-for-developers/"
-                      >
+                    <Link href="/Users">
+                      <a className="btn app-btn-primary">
                         <svg
                           width="1em"
                           height="1em"
@@ -43,8 +41,10 @@ const index = () => {
                             d="M8 6a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 10.293V6.5A.5.5 0 0 1 8 6z"
                           />
                         </svg>
-                        Free Download
+                        Let's Go
                       </a>
+
+                    </Link>
                     </div>
                   </div>
 
@@ -62,24 +62,9 @@ const index = () => {
               <div className="col-6 col-lg-3">
                 <div className="app-card app-card-stat shadow-sm h-100">
                   <div className="app-card-body p-3 p-lg-4">
-                    <h4 className="stats-type mb-1">Total Sales</h4>
-                    <div className="stats-figure">$12,628</div>
-                    <div className="stats-meta text-success">
-                      <svg
-                        width="1em"
-                        height="1em"
-                        viewBox="0 0 16 16"
-                        className="bi bi-arrow-up"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"
-                        />
-                      </svg>{" "}
-                      20%
-                    </div>
+                    <h4 className="stats-type mb-1">Total Accounts</h4>
+                    <div className="stats-figure">15</div>
+                   
                   </div>
 
                   <a className="app-card-link-mask" href="#" />
@@ -89,24 +74,9 @@ const index = () => {
               <div className="col-6 col-lg-3">
                 <div className="app-card app-card-stat shadow-sm h-100">
                   <div className="app-card-body p-3 p-lg-4">
-                    <h4 className="stats-type mb-1">Expenses</h4>
-                    <div className="stats-figure">$2,250</div>
-                    <div className="stats-meta text-success">
-                      <svg
-                        width="1em"
-                        height="1em"
-                        viewBox="0 0 16 16"
-                        className="bi bi-arrow-down"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-                        />
-                      </svg>{" "}
-                      5%{" "}
-                    </div>
+                    <h4 className="stats-type mb-1">Total Requests</h4>
+                    <div className="stats-figure">8</div>
+                 
                   </div>
 
                   <a className="app-card-link-mask" href="#" />
@@ -116,8 +86,8 @@ const index = () => {
               <div className="col-6 col-lg-3">
                 <div className="app-card app-card-stat shadow-sm h-100">
                   <div className="app-card-body p-3 p-lg-4">
-                    <h4 className="stats-type mb-1">Projects</h4>
-                    <div className="stats-figure">23</div>
+                    <h4 className="stats-type mb-1">Staff Count</h4>
+                    <div className="stats-figure">0</div>
                     <div className="stats-meta">Open</div>
                   </div>
 
@@ -128,8 +98,8 @@ const index = () => {
               <div className="col-6 col-lg-3">
                 <div className="app-card app-card-stat shadow-sm h-100">
                   <div className="app-card-body p-3 p-lg-4">
-                    <h4 className="stats-type mb-1">Invoices</h4>
-                    <div className="stats-figure">6</div>
+                    <h4 className="stats-type mb-1">Payment Received</h4>
+                    <div className="stats-figure">$ 0</div>
                     <div className="stats-meta">New</div>
                   </div>
 
@@ -138,7 +108,7 @@ const index = () => {
               </div>
             </div>
 
-            <div className="row g-4 mb-4">
+            {/* <div className="row g-4 mb-4">
               <div className="col-12 col-lg-6">
                 <div className="app-card app-card-chart h-100 shadow-sm">
                   <div className="app-card-header p-3">
@@ -622,7 +592,7 @@ const index = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

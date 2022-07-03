@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useRouter } from 'next/router'
+
 
 const Users = () => {
+  const router = useRouter()
+
   const [datas, setDatas] = useState();
   const [showData, setShowData] = useState(false);
+
+  const [randomValue, setRandomValue] = useState("");
 
   useEffect(() => {
     axios
@@ -20,6 +26,33 @@ const Users = () => {
   }, []);
 
   console.log(datas);
+
+  const handleClick = () => {
+    let randomvalue = Math.floor(Math.random() * 15696848648465465400 + 85);
+    // alert(randomvalue)
+    setRandomValue(randomvalue);
+  };
+
+  const handleUserDataUpdate = (id) => {
+    axios
+    .post("/api/updateuserActivationCode", {
+      activationkey: randomValue,
+      userid: id,
+    })
+    .then((acc) => {
+      console.log("user activation code updated");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+    // alert(id)
+    router.push("/")
+
+
+
+
+
+  };
 
   return (
     <div className="container mt-5">
@@ -44,9 +77,6 @@ const Users = () => {
                           <th className="cell">Wallate</th>
                           <th className="cell">Referal</th>
                           <th className="cell">Activation Key</th>
-
-                          {/* <th className="cell" /> */}
-                          {/* <th className="cell" /> */}
                           <th className="cell" />
                         </tr>
                       </thead>
@@ -70,11 +100,220 @@ const Users = () => {
                                     <a
                                       className="btn-sm app-btn-secondary"
                                       type="button"
-                                      data-toggle="modal" data-target="#exampleModal"
+                                      data-bs-toggle="modal"
+                                      data-bs-target={`#staticBackdrop${hit._id}`}
                                     >
-                                      Edit
+                                      Action
                                     </a>
                                   </td>
+                                  {/* modal starts from here  */}
+
+                                  <div
+                                    className="modal fade"
+                                    id={`staticBackdrop${hit._id}`}
+                                    // id="staticBackdrop"
+                                    data-bs-backdrop="static"
+                                    data-bs-keyboard="false"
+                                    tabIndex={-1}
+                                    aria-labelledby="staticBackdropLabel"
+                                    aria-hidden="true"
+                                  >
+                                    <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                      <div className="modal-content">
+                                        <div className="modal-header">
+                                          <h5
+                                            className="modal-title"
+                                            id="staticBackdropLabel"
+                                          >
+                                            User Details
+                                          </h5>
+                                          <button
+                                            type="button"
+                                            className="btn-close"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Close"
+                                          />
+                                        </div>
+                                        <div className="modal-body">
+                                          <div className="container pt-1 pb-5">
+                                            <label class="form-label">
+                                              Name
+                                            </label>
+                                            <input
+                                              type="text"
+                                              class="form-control"
+                                              defaultValue={hit.Name}
+                                            />
+                                            <div className="p-1"></div>
+
+                                            <label class="form-label">
+                                              Username
+                                            </label>
+                                            <input
+                                              type="text"
+                                              class="form-control"
+                                              defaultValue={hit.username}
+                                            />
+                                            <div className="p-1"></div>
+
+                                            <label class="form-label">
+                                              Email
+                                            </label>
+                                            <input
+                                              type="text"
+                                              class="form-control"
+                                              defaultValue={hit.email}
+                                            />
+                                            <div className="p-1"></div>
+
+                                            <label class="form-label">
+                                              Role
+                                            </label>
+                                            <input
+                                              type="text"
+                                              class="form-control"
+                                              defaultValue={hit.role}
+                                            />
+                                            <div className="p-1"></div>
+
+                                            <label class="form-label">
+                                              Activation Key
+                                            </label>
+                                            <input
+                                              type="text"
+                                              class="form-control"
+                                              defaultValue={
+                                                hit.activationKey === "none"
+                                                  ? randomValue
+                                                  : hit.activationKey
+                                              }
+                                            />
+                                            {hit.activationKey !== "none" ? (
+                                              <></>
+                                            ) : (
+                                              <p
+                                                onClick={handleClick}
+                                                style={{
+                                                  textDecoration: "underline",
+                                                  cursor: "pointer",
+                                                }}
+                                                className="text-primary text-end"
+                                              >
+                                                Generate An Activation Code
+                                              </p>
+                                            )}
+
+                                            <label class="form-label">
+                                              Weight
+                                            </label>
+                                            <input
+                                              type="text"
+                                              class="form-control"
+                                              defaultValue={hit.Weight}
+                                            />
+                                            <div className="p-1"></div>
+
+                                            <label class="form-label">
+                                              Height
+                                            </label>
+                                            <input
+                                              type="text"
+                                              class="form-control"
+                                              defaultValue={hit.Height}
+                                            />
+                                            <div className="p-1"></div>
+
+                                            <label class="form-label">
+                                              DOB
+                                            </label>
+                                            <input
+                                              type="text"
+                                              class="form-control"
+                                              defaultValue={hit.DOB}
+                                            />
+                                            <div className="p-1"></div>
+
+                                            <label class="form-label">
+                                              Age
+                                            </label>
+                                            <input
+                                              type="text"
+                                              class="form-control"
+                                              defaultValue={hit.Age}
+                                            />
+                                            <div className="p-1"></div>
+
+                                            <label class="form-label">
+                                              Gender
+                                            </label>
+                                            <input
+                                              type="text"
+                                              class="form-control"
+                                              defaultValue={hit.Gender}
+                                            />
+                                            <div className="p-1"></div>
+
+                                            <label class="form-label">
+                                              Goal
+                                            </label>
+                                            <input
+                                              type="text"
+                                              class="form-control"
+                                              defaultValue={hit.Goal}
+                                            />
+                                            <div className="p-1"></div>
+
+                                            <label class="form-label">
+                                              Wallet
+                                            </label>
+                                            <input
+                                              type="text"
+                                              class="form-control"
+                                              defaultValue={hit.wallate}
+                                            />
+                                            <div className="p-1"></div>
+
+                                            <label class="form-label">
+                                              Referal
+                                            </label>
+                                            <input
+                                              type="text"
+                                              class="form-control"
+                                              defaultValue={hit.referal}
+                                            />
+                                            <div className="p-1"></div>
+
+                                            <label class="form-label">
+                                              Account Created At
+                                            </label>
+                                            <input
+                                              type="text"
+                                              class="form-control"
+                                              defaultValue={hit.createdAt}
+                                            />
+                                            <div className="p-1"></div>
+
+                                            {
+                                              hit.activationKey === "none" ? 
+
+                                            <div className="text-center mt-3">
+                                              <button data-bs-dismiss="modal" aria-label="Close" onClick={()=>handleUserDataUpdate(hit._id)} className="btn btn-primary text-white">
+                                                Update Activation Code
+                                              </button>
+                                            </div>
+
+                                              :
+
+                                              <></>
+                                            }
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  {/* modal ends here  */}
                                 </tr>
                               );
                             })}
@@ -84,28 +323,6 @@ const Users = () => {
                         )}
                       </tbody>
                     </table>
-
-
-                   <div className="modal fade" id="exampleModal" tabIndex={-1} role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div className="modal-dialog" role="document">
-    <div className="modal-content">
-      <div className="modal-header">
-        <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">×</span>
-        </button>
-      </div>
-      <div className="modal-body">
-        ...
-      </div>
-      <div className="modal-footer">
-        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" className="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
                   </div>
                 </div>
               </div>
