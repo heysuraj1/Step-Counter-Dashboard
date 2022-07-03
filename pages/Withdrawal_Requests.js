@@ -109,23 +109,23 @@ const Withdrawal_Requests = () => {
 
                                           <div className="container pt-1 pb-5">
 
-                                          <label class="form-label">User Id</label>
-                                          <input type="text" class="form-control" defaultValue={hit.userUniqueId}/>
+                                          <label className="form-label">User Id</label>
+                                          <input type="text" className="form-control" defaultValue={hit.userUniqueId}/>
                                           <div className="p-2"></div>
-                                          <label class="form-label">Coins Requested</label>
-                                          <input type="text" class="form-control" defaultValue={hit.WithdrawCoins}/>
+                                          <label className="form-label">Coins Requested</label>
+                                          <input type="text" className="form-control" defaultValue={hit.WithdrawCoins}/>
                                           <div className="p-2"></div>
-                                          <label class="form-label">Activation Key</label>
-                                          <input type="text" class="form-control" defaultValue={hit.ActivationCode}/>
+                                          <label className="form-label">Activation Key</label>
+                                          <input type="text" className="form-control" defaultValue={hit.ActivationCode}/>
                                           <div className="p-2"></div>
-                                          <label class="form-label">Payment Wallet</label>
-                                          <input type="text" class="form-control" defaultValue={hit.PaymentWallete}/>
+                                          <label className="form-label">Payment Wallet</label>
+                                          <input type="text" className="form-control" defaultValue={hit.PaymentWallete}/>
                                           <div className="p-2"></div>
-                                          <label class="form-label">Requested On</label>
-                                          <input type="text" class="form-control" defaultValue={hit.createdAt}/>
+                                          <label className="form-label">Requested On</label>
+                                          <input type="text" className="form-control" defaultValue={hit.createdAt}/>
                                           <div className="p-2"></div>
-                                          <label class="form-label">Status</label>
-                                          {/* <input type="text" class="form-control" defaultValue={hit.Status}/> */}
+                                          <label className="form-label">Status</label>
+                                          {/* <input type="text" className="form-control" defaultValue={hit.Status}/> */}
 
 
 

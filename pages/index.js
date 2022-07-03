@@ -18,7 +18,7 @@ const index = () => {
                   <div className="row gx-5 gy-3">
                     <div className="col-12 col-lg-9">
                       <div>
-                        Welcome To Your Admin Dashboard. Let's Manage All The
+                        Welcome To Your Admin Dashboard. Lets Manage All The
                         Requests And Make Something Big
                       </div>
                     </div>
@@ -41,7 +41,7 @@ const index = () => {
                             d="M8 6a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 10.293V6.5A.5.5 0 0 1 8 6z"
                           />
                         </svg>
-                        Let's Go
+                        Lets Go
                       </a>
 
                     </Link>

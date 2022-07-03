@@ -136,52 +136,52 @@ const Users = () => {
                                         </div>
                                         <div className="modal-body">
                                           <div className="container pt-1 pb-5">
-                                            <label class="form-label">
+                                            <label className="form-label">
                                               Name
                                             </label>
                                             <input
                                               type="text"
-                                              class="form-control"
+                                              className="form-control"
                                               defaultValue={hit.Name}
                                             />
                                             <div className="p-1"></div>
 
-                                            <label class="form-label">
+                                            <label className="form-label">
                                               Username
                                             </label>
                                             <input
                                               type="text"
-                                              class="form-control"
+                                              className="form-control"
                                               defaultValue={hit.username}
                                             />
                                             <div className="p-1"></div>
 
-                                            <label class="form-label">
+                                            <label className="form-label">
                                               Email
                                             </label>
                                             <input
                                               type="text"
-                                              class="form-control"
+                                              className="form-control"
                                               defaultValue={hit.email}
                                             />
                                             <div className="p-1"></div>
 
-                                            <label class="form-label">
+                                            <label className="form-label">
                                               Role
                                             </label>
                                             <input
                                               type="text"
-                                              class="form-control"
+                                              className="form-control"
                                               defaultValue={hit.role}
                                             />
                                             <div className="p-1"></div>
 
-                                            <label class="form-label">
+                                            <label className="form-label">
                                               Activation Key
                                             </label>
                                             <input
                                               type="text"
-                                              class="form-control"
+                                              className="form-control"
                                               defaultValue={
                                                 hit.activationKey === "none"
                                                   ? randomValue
@@ -203,92 +203,92 @@ const Users = () => {
                                               </p>
                                             )}
 
-                                            <label class="form-label">
+                                            <label className="form-label">
                                               Weight
                                             </label>
                                             <input
                                               type="text"
-                                              class="form-control"
+                                              className="form-control"
                                               defaultValue={hit.Weight}
                                             />
                                             <div className="p-1"></div>
 
-                                            <label class="form-label">
+                                            <label className="form-label">
                                               Height
                                             </label>
                                             <input
                                               type="text"
-                                              class="form-control"
+                                              className="form-control"
                                               defaultValue={hit.Height}
                                             />
                                             <div className="p-1"></div>
 
-                                            <label class="form-label">
+                                            <label className="form-label">
                                               DOB
                                             </label>
                                             <input
                                               type="text"
-                                              class="form-control"
+                                              className="form-control"
                                               defaultValue={hit.DOB}
                                             />
                                             <div className="p-1"></div>
 
-                                            <label class="form-label">
+                                            <label className="form-label">
                                               Age
                                             </label>
                                             <input
                                               type="text"
-                                              class="form-control"
+                                              className="form-control"
                                               defaultValue={hit.Age}
                                             />
                                             <div className="p-1"></div>
 
-                                            <label class="form-label">
+                                            <label className="form-label">
                                               Gender
                                             </label>
                                             <input
                                               type="text"
-                                              class="form-control"
+                                              className="form-control"
                                               defaultValue={hit.Gender}
                                             />
                                             <div className="p-1"></div>
 
-                                            <label class="form-label">
+                                            <label className="form-label">
                                               Goal
                                             </label>
                                             <input
                                               type="text"
-                                              class="form-control"
+                                              className="form-control"
                                               defaultValue={hit.Goal}
                                             />
                                             <div className="p-1"></div>
 
-                                            <label class="form-label">
+                                            <label className="form-label">
                                               Wallet
                                             </label>
                                             <input
                                               type="text"
-                                              class="form-control"
+                                              className="form-control"
                                               defaultValue={hit.wallate}
                                             />
                                             <div className="p-1"></div>
 
-                                            <label class="form-label">
+                                            <label className="form-label">
                                               Referal
                                             </label>
                                             <input
                                               type="text"
-                                              class="form-control"
+                                              className="form-control"
                                               defaultValue={hit.referal}
                                             />
                                             <div className="p-1"></div>
 
-                                            <label class="form-label">
+                                            <label className="form-label">
                                               Account Created At
                                             </label>
                                             <input
                                               type="text"
-                                              class="form-control"
+                                              className="form-control"
                                               defaultValue={hit.createdAt}
                                             />
                                             <div className="p-1"></div>

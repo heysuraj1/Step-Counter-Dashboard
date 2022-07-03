@@ -124,11 +124,11 @@ const Notifications = () => {
                           <div className="modal-body">
 
 
-                              <label  class="form-label">User Unique Id</label>
-                              <input defaultValue={hit.userUniqueId} type="text" class="form-control" />
+                              <label  className="form-label">User Unique Id</label>
+                              <input defaultValue={hit.userUniqueId} type="text" className="form-control" />
                               <div className="p-2"></div>
-                              <label  class="form-label">Notification Message</label>
-                              <textarea defaultValue={hit.notificationMessage} rows={10} type="text" class="form-control"  />
+                              <label  className="form-label">Notification Message</label>
+                              <textarea defaultValue={hit.notificationMessage} rows={10} type="text" className="form-control"  />
                               <div className="p-2"></div>
                               
 
@@ -178,8 +178,8 @@ const Notifications = () => {
             </div>
             <div className="modal-body">
               <div className="container mt-2 mb-5">
-                <label class="form-label">User Name</label>
-                {/* <input type="text" class="form-control" /> */}
+                <label className="form-label">User Name</label>
+                {/* <input type="text" className="form-control" /> */}
                 <select
                   className="form-select"
                   aria-label="Default select example"
@@ -193,8 +193,8 @@ const Notifications = () => {
                 </select>
 
                 <div className="p-1"></div>
-                <label class="form-label">Notification Message</label>
-                <textarea rows={20} type="text" class="form-control" />
+                <label className="form-label">Notification Message</label>
+                <textarea rows={20} type="text" className="form-control" />
                 <div className="p-1"></div>
 
                 <div className="continer text-center mt-2">
