@@ -1,20 +1,14 @@
 import initDB from "../../helper/initDB";
 import WithdrawReq from "../../helper/model/WithdrawReq";
-initDB()
+initDB();
 export default async (req, res) => {
   if (req.method === "POST") {
-    const { userUniqueId, WithdrawCoins, ActivationCode } = req.body;
+    const { userUniqueId } = req.body;
 
     try {
-      if (!userUniqueId || !WithdrawCoins || !ActivationCode) {
-        return res.status(422).json({ error: "Please Fill All The Colons" });
-      }
-
-      const WithdrawRequests = await new WithdrawReq({
-        userUniqueId,
-        WithdrawCoins,
-        ActivationCode,
-      }).save();
+      const WithdrawRequests = await WithdrawReq.find({
+        userUniqueId: userUniqueId,
+      });
       res.status(201).json(WithdrawRequests);
     } catch (error) {
       console.log(error);
@@ -23,9 +17,4 @@ export default async (req, res) => {
     const userReq = await WithdrawReq.find();
     res.status(200).json(userReq);
   }
-
-
-
-
-  // }
 };

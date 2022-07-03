@@ -5,6 +5,7 @@ const WithdrawReqSchema = new mongoose.Schema(
     userUniqueId: {
       type: String,
       required: true,
+  
     },
     WithdrawCoins: {
       type: String,
