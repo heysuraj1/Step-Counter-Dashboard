@@ -61,10 +61,18 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "none",
     },
+    ReferedAndEarned: {
+      type: String,
+      default: "none",
+    },
+    RunningPackage: {
+      type: String,
+      default: "none",
+    },
   },
   {
     timestamps: true,
   }
 );
 
-export default mongoose.models.Use || mongoose.model("Use", userSchema);
+export default mongoose.models.User || mongoose.model("User", userSchema);
