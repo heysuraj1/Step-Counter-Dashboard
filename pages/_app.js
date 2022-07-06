@@ -2,6 +2,8 @@ import "../styles/globals.css";
 import Head from "next/head";
 import Script from "next/script";
 import SidePanel from "../components/SidePanel";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -13,7 +15,6 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="favicon.ico" />
         <link id="theme-style" rel="stylesheet" href="css/portal.css" />
-        
       </Head>
 
       <div>
@@ -75,9 +76,19 @@ function MyApp({ Component, pageProps }) {
 
           <SidePanel />
         </header>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={true}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
 
         <Component {...pageProps} />
-       
       </div>
 
       <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" />

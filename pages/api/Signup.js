@@ -18,6 +18,15 @@ export default async (req, res) => {
         .json({ error: "This user already exist please choose another one" });
     }
     const hashedPassowd = await bcrypt.hash(password, 12);
+
+
+
+
+
+
+
+
+    
     const newUser = await new User({
         username,
       email,
