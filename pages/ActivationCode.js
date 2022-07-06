@@ -77,7 +77,7 @@ const ActivationCode = () => {
       <div className="container mt-5">
         <div className="row">
           <div className="col-sm-6 mt-4">
-            <input value={generatedCode} type="text" class="form-control" />
+            <input value={generatedCode} type="text" className="form-control" />
           </div>
           <div className="col-sm-6 mt-4">
             <button
@@ -122,7 +122,7 @@ const ActivationCode = () => {
                         width="16"
                         height="16"
                         fill="currentColor"
-                        class="bi bi-trash3-fill"
+                        className="bi bi-trash3-fill"
                         viewBox="0 0 16 16"
                         color="red"
                         onClick={() => handleDeleteIt(hit._id)}
