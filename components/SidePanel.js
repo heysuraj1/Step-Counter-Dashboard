@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -6,38 +6,13 @@ const SidePanel = () => {
   const [usename, setUsename] = useState("");
   const router = useRouter();
 
-
   useEffect(() => {
+    const localData = localStorage.getItem("jwt");
 
-   const localData = localStorage.getItem("jwt")
+    const parsed = JSON.parse(localData);
 
-   const parsed = JSON.parse(localData)
-
-   setUsename(parsed.username)
-   
-    
-
-
-
-
+    setUsename(parsed.username);
   }, []);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   function isActive(route) {
     if (route == router.pathname) {
@@ -54,6 +29,7 @@ const SidePanel = () => {
         </a>
         <Link href="/">
           <div className="app-branding">
+            <img className="logo-icon me-2" src="/images/logo.png" alt="logo" />
             <a className="app-logo">
               <span className="logo-text">Hi, {usename}</span>
             </a>
