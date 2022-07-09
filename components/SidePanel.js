@@ -20,6 +20,18 @@ const SidePanel = () => {
     } else return "";
   }
 
+
+
+
+  const handleLogout = () =>{
+    localStorage.clear("jwt")
+    router.reload()
+
+
+
+
+  }
+
   return (
     <div id="app-sidepanel" className="app-sidepanel">
       <div id="sidepanel-drop" className="sidepanel-drop" />
@@ -236,7 +248,7 @@ const SidePanel = () => {
                       <path d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
                     </svg>
                   </span>
-                  <span className="nav-link-text">Log Out</span>
+                  <span onClick={handleLogout} className="nav-link-text">Log Out</span>
                 </a>
               </li>
             </ul>
