@@ -4,6 +4,7 @@ import Script from "next/script";
 import SidePanel from "../components/SidePanel";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Login from "../components/Login/Login";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -16,6 +17,24 @@ function MyApp({ Component, pageProps }) {
         <link rel="shortcut icon" href="favicon.ico" />
         <link id="theme-style" rel="stylesheet" href="css/portal.css" />
       </Head>
+
+      {
+        2 === 2 ?
+
+        <>
+        <Login/>
+
+
+
+
+        </>
+
+
+        :
+
+
+        <>
+
 
       <div>
         <header className="app-header fixed-top">
@@ -90,6 +109,11 @@ function MyApp({ Component, pageProps }) {
 
         <Component {...pageProps} />
       </div>
+
+
+        </>
+      }
+
 
       <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" />
       <Script src="plugins/fontawesome/js/all.min.js" />
