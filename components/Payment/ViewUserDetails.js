@@ -104,7 +104,7 @@ const ViewUserDetails = (props) => {
             <label className="form-label mt-3">Status</label>
             <select onChange={(e) => {
                           setSelectStatus(e.target.value);
-                        }} class="form-select" aria-label="Default select example">
+                        }} className="form-select" aria-label="Default select example">
               <option   className="bg-primary text-white" selected value={props.status}>
               {props.status}
               </option>
