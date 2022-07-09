@@ -1,29 +1,22 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Link from "next/link";
-import { useRouter } from 'next/router'
-
-
-const Login = () => {
-  const router = useRouter()
-
+const Signup = () => {
   const [emil, setEmil] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(emil, password);
+    console.log(emil, password,username);
 
     axios
-      .post("/api/Admin/Login", {
+      .post("/api/Admin/Signup", {
         email: emil,
         password: password,
+        username:username
       })
       .then((acc) => {
         console.log(acc.data);
-        const stringified = JSON.stringify(acc.data)
-        localStorage.setItem("jwt",stringified);
-        router.reload()
       })
       .catch((err) => {
         console.log(err);
@@ -47,13 +40,27 @@ const Login = () => {
                   </a>
                 </div>
                 <h2 className="auth-heading text-center mb-5">
-                  Hey Admin Login Here
+                  Hey Admin 
                 </h2>
                 <div className="auth-form-container text-start">
                   <form
                     onSubmit={handleSubmit}
                     className="auth-form login-form"
                   >
+                    <div className="email mb-3">
+                      <label className="sr-only" htmlFor="signin-email">
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        className="form-control signin-email"
+                        placeholder="Email address"
+                        required="required"
+                        onChange={(e) => {
+                          setUsername(e.target.value);
+                        }}
+                      />
+                    </div>
                     <div className="email mb-3">
                       <label className="sr-only" htmlFor="signin-email">
                         Email
@@ -100,11 +107,11 @@ const Login = () => {
                           </div>
                         </div>
 
-                        {/* <div className="col-6">
+                        <div className="col-6">
                           <div className="forgot-password text-end">
                             <a href="reset-password.html">Forgot password?</a>
                           </div>
-                        </div> */}
+                        </div>
                       </div>
                     </div>
 
@@ -117,6 +124,13 @@ const Login = () => {
                       </button>
                     </div>
                   </form>
+                  <div className="auth-option text-center pt-5">
+                    No Account? Sign up{" "}
+                    <a className="text-link" href="signup.html">
+                      here
+                    </a>
+                    .
+                  </div>
                 </div>
               </div>
             </div>
@@ -127,4 +141,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
