@@ -109,7 +109,7 @@ const Login = () => {
                     <a
                       className="app-link"
                       href="http://themes.3rdwavemedia.com"
-                      target="_blank"
+                      target="__blank"
                     >
                       Xiaoying Riley
                     </a>{" "}
