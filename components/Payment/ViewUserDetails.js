@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import axios from "axios";
-import { useRouter } from 'next/router'
-
+import { useRouter } from "next/router";
 
 const ViewUserDetails = (props) => {
-  const router = useRouter()
+  const router = useRouter();
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -39,26 +38,22 @@ const ViewUserDetails = (props) => {
       });
   }, []);
 
-
-
-
-  const handleUpdate = () =>{
-
+  const handleUpdate = () => {
     // console.log(SelectStatus)
 
-
-
-    axios.post("/api/Deposit/UpdateStatus",{
-      userId:props.mainId,
-      status:SelectStatus
-    }).then((acc)=>{
-      console.log("updated")
-      router.reload()
-    }).catch((err)=>{
-      console.log(err)
-    })
-
-  }
+    axios
+      .post("/api/Deposit/UpdateStatus", {
+        userId: props.mainId,
+        status: SelectStatus,
+      })
+      .then((acc) => {
+        console.log("updated");
+        router.reload();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div style={{ marginTop: 100 }} className=" container">
@@ -90,11 +85,11 @@ const ViewUserDetails = (props) => {
             <div style={{ textAlign: "center" }}>
               <a
                 target="__blank"
-                href="https://1.bp.blogspot.com/-sOqv9sI50hQ/X_lfiyxtucI/AAAAAAAABPc/KTIY-B8X2fQDhNzXVnAPrG0u15vYPXTyACLcBGAsYHQ/w309-h589/google%2Bpay%2Breceipt.jpg"
+                href={props.paymentScreenshot}
               >
                 <img
                   style={{ width: 100 }}
-                  src="https://1.bp.blogspot.com/-sOqv9sI50hQ/X_lfiyxtucI/AAAAAAAABPc/KTIY-B8X2fQDhNzXVnAPrG0u15vYPXTyACLcBGAsYHQ/w309-h589/google%2Bpay%2Breceipt.jpg"
+                  src={props.paymentScreenshot}
                   className="img-fluid"
                   alt=""
                 />
@@ -102,11 +97,19 @@ const ViewUserDetails = (props) => {
             </div>
             <br />
             <label className="form-label mt-3">Status</label>
-            <select onChange={(e) => {
-                          setSelectStatus(e.target.value);
-                        }} className="form-select" aria-label="Default select example">
-              <option   className="bg-primary text-white" selected value={props.status}>
-              {props.status}
+            <select
+              onChange={(e) => {
+                setSelectStatus(e.target.value);
+              }}
+              className="form-select"
+              aria-label="Default select example"
+            >
+              <option
+                className="bg-primary text-white"
+                selected
+                value={props.status}
+              >
+                {props.status}
               </option>
               <option value="Pending">Pending</option>
               <option value="Approved">Approved</option>
@@ -123,9 +126,18 @@ const ViewUserDetails = (props) => {
         </div>
 
         <div className="container text-center mt-5">
-          <button onClick={handleUpdate} style={{width:"20%"}} className="btn btn-primary text-white">Save</button>
+          <button
+            onClick={handleUpdate}
+            style={{ width: "20%" }}
+            className="btn btn-primary text-white"
+          >
+            Save
+          </button>
           <div className="mt-4">
-          <a style={{cursor:"pointer"}}  onClick={()=>router.reload()}> <h6>Back</h6> </a>
+            <a style={{ cursor: "pointer" }} onClick={() => router.reload()}>
+              {" "}
+              <h6>Back</h6>{" "}
+            </a>
           </div>
         </div>
       </div>

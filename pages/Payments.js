@@ -27,9 +27,16 @@ const Payments = () => {
 
   console.log(datas);
 
-  const handleChangeStatus = (mainid,id, transid, payscreenshot, status, remark) => {
+  const handleChangeStatus = (
+    mainid,
+    id,
+    transid,
+    payscreenshot,
+    status,
+    remark
+  ) => {
     setGoToEdit(true);
-    setMainId(mainid)
+    setMainId(mainid);
     setUserId(id);
     setTransectionId(transid);
     setPaymentScreenshot(payscreenshot);
@@ -41,7 +48,14 @@ const Payments = () => {
     <div className="container">
       {goToEdit ? (
         <>
-          <ViewUserDetails mainId={mainId}  userid={userId} transectionId={transectionId}  paymentScreenshot={paymentScreenshot} status={status} remark={remark}   />
+          <ViewUserDetails
+            mainId={mainId}
+            userid={userId}
+            transectionId={transectionId}
+            paymentScreenshot={paymentScreenshot}
+            status={status}
+            remark={remark}
+          />
         </>
       ) : (
         <>
@@ -64,7 +78,11 @@ const Payments = () => {
                       <tr key={hit.id}>
                         <td>{hit.UserId}</td>
                         <td>{hit.transectionId}</td>
-                        <td>{hit.paymentScreenshort}</td>
+                        <td>
+                          <a target="__blank" href={hit.paymentScreenshort}>
+                            {hit.paymentScreenshort.slice(0, 25)}...
+                          </a>
+                        </td>
                         <td>{hit.approvalStatus}</td>
                         <td>
                           <button
