@@ -20,17 +20,10 @@ const SidePanel = () => {
     } else return "";
   }
 
-
-
-
-  const handleLogout = () =>{
-    localStorage.clear("jwt")
-    router.reload()
-
-
-
-
-  }
+  const handleLogout = () => {
+    localStorage.clear("jwt");
+    router.reload();
+  };
 
   return (
     <div id="app-sidepanel" className="app-sidepanel">
@@ -95,6 +88,26 @@ const SidePanel = () => {
                     </svg>
                   </span>
                   <span className="nav-link-text">Users</span>
+                </a>
+              </li>
+            </Link>
+            <Link href="/Packages">
+              <li className="nav-item hovme">
+                {/*//Bootstrap Icons: https://icons.getbootstrap.com/ */}
+                <a className={`nav-link ${isActive("/Packages")}`}>
+                  <span className="nav-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-box2-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M3.75 0a1 1 0 0 0-.8.4L.1 4.2a.5.5 0 0 0-.1.3V15a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4.5a.5.5 0 0 0-.1-.3L13.05.4a1 1 0 0 0-.8-.4h-8.5ZM15 4.667V5H1v-.333L1.5 4h6V1h1v3h6l.5.667Z" />
+                    </svg>
+                  </span>
+                  <span className="nav-link-text">Packages</span>
                 </a>
               </li>
             </Link>
@@ -248,7 +261,9 @@ const SidePanel = () => {
                       <path d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
                     </svg>
                   </span>
-                  <span onClick={handleLogout} className="nav-link-text">Log Out</span>
+                  <span onClick={handleLogout} className="nav-link-text">
+                    Log Out
+                  </span>
                 </a>
               </li>
             </ul>
