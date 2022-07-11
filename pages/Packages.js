@@ -136,7 +136,7 @@ const Packages = () => {
                                               width="16"
                                               height="16"
                                               fill="currentColor"
-                                              class="bi bi-trash3-fill"
+                                              className="bi bi-trash3-fill"
                                               viewBox="0 0 16 16"
                                               onClick={()=>handleDelete(hit._id)}
                                               style={{cursor:"pointer",color:"red"}}
