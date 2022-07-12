@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const CreatePackage = () => {
-    const router = useRouter()
+  const router = useRouter();
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -12,9 +12,11 @@ const CreatePackage = () => {
   const [reward, setReward] = useState("");
   const [goal, setGoal] = useState("");
   const [accountNumber, setAccountNumber] = useState("");
+  const [media, setMedia] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
+    const mediaUrl = await imageUpload();
 
     axios
       .post("/api/Package/Packages", {
@@ -23,26 +25,54 @@ const CreatePackage = () => {
         PackagePeriod: period,
         EveryDayReward: reward,
         StepsGoal: goal,
-        QRCode: "thisisademowr",
+        QRCode: mediaUrl,
         AccountNumber: accountNumber,
       })
       .then((acc) => {
         console.log(acc.data);
         toast.success("Package Added", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
         });
-        router.reload()
+        router.reload();
       })
       .catch((err) => {
         console.log(err);
       });
   };
+
+
+
+
+
+
+
+
+
+
+
+
+  const imageUpload = async () => {
+    const data = new FormData();
+    data.append("file", media);
+    data.append("upload_preset", "mystore");
+    data.append("cloud_name", "learnerboy");
+    const res = await fetch(
+      "	https://api.cloudinary.com/v1_1/learnerboy/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    );
+    const res2 = await res.json();
+    return res2.url;
+  };
+
 
   return (
     <div className="container">
@@ -111,9 +141,33 @@ const CreatePackage = () => {
                 type="text"
                 className="form-control"
               />
+              <label htmlFor="exampleInputEmail1" className="form-label mt-2">
+                Upload Image
+              </label>
+              <input
+                accept="image/*"
+                onChange={(e) => {
+                  setMedia(e.target.files[0]);
+                }}
+                type="file"
+                className="form-control"
+              />
             </div>
           </div>
-          <div className="col-sm-6"></div>
+          <div className="col-sm-6">
+            <div className="text-center">
+              <img
+                src={
+                  media
+                    ? URL.createObjectURL(media)
+                    : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZEhBSYCK3ueHMx5lenuCqxrl2NR-QlblZVg&usqp=CAU"
+                }
+                className="img-fluid henc text-center"
+                alt="..."
+                width="auto"
+              />
+            </div>
+          </div>
         </div>
         <button className="btn btn-primary mt-3 text-white">Submit</button>
       </form>
