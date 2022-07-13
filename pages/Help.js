@@ -2,6 +2,7 @@ import React from "react";
 
 const Help = () => {
   return (
+    <div className="app-wrapper">
     <div>
       <div className="container">
         <h5 style={{ marginTop: 100, fontWeight: "bold" }}>Need Any Help ?</h5>
@@ -119,6 +120,7 @@ const Help = () => {
           Neque minima quas nobis accusamus tenetur quibusdam dolorem itaque possimus, ullam magni, ratione deserunt voluptatem. Rerum fugiat eaque doloribus excepturi minima ullam sapiente, cumque, dolorem recusandae, sed adipisci? Voluptate, sequi?
         </div>
       </div>
+    </div>
     </div>
   );
 };

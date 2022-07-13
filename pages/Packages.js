@@ -47,6 +47,7 @@ const Packages = () => {
   }
 
   return (
+    <div className="app-wrapper">
     <>
       {showCraete ? (
         <>
@@ -212,6 +213,7 @@ const Packages = () => {
         </>
       )}
     </>
+          </div>
   );
 };
 

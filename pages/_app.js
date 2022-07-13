@@ -121,7 +121,7 @@ function MyApp({ Component, pageProps }) {
       <Script src="plugins/bootstrap/js/bootstrap.min.js" />
       {/* <Script src="plplugins/chart.js/chart.min.js" /> */}
       {/* <Script src="js/index-charts.js" /> */}
-      {/* <Script src="js/app.js" /> */}
+      <Script src="js/app.js" />
     </div>
   );
 }

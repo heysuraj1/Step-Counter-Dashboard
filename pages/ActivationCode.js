@@ -71,6 +71,7 @@ const ActivationCode = () => {
   };
 
   return (
+    <div className="app-wrapper">
     <div className="container">
       <h3 style={{ marginTop: 100 }}>Generate Activation Code</h3>
 
@@ -140,6 +141,7 @@ const ActivationCode = () => {
           </tbody>
         </table>
       </div>
+    </div>
     </div>
   );
 };

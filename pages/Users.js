@@ -55,6 +55,7 @@ const Users = () => {
   };
 
   return (
+    <div className="app-wrapper">
     <div className="container mt-5">
       <div className="app-content pt-3 p-md-3 p-lg-4">
         <div style={{ marginTop: 50 }} className="container-xl">
@@ -330,6 +331,7 @@ const Users = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

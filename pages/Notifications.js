@@ -17,6 +17,7 @@ const Notifications = () => {
   }, []);
 
   return (
+    <div className="app-wrapper">
     <div className="container">
       <div style={{ marginTop: 100 }}>
         <div className="row">
@@ -213,6 +214,7 @@ const Notifications = () => {
       </div>
 
       {/* add modal ends here  */}
+    </div>
     </div>
   );
 };

@@ -45,6 +45,7 @@ const Payments = () => {
   };
 
   return (
+    <div className="app-wrapper">
     <div className="container">
       {goToEdit ? (
         <>
@@ -113,6 +114,7 @@ const Payments = () => {
           </table>
         </>
       )}
+    </div>
     </div>
   );
 };

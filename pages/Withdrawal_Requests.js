@@ -20,6 +20,7 @@ const Withdrawal_Requests = () => {
   console.log(datas);
 
   return (
+    <div className="app-wrapper">
     <div>
       <div className="container mt-5">
         <div className="app-content pt-3 p-md-3 p-lg-4">
@@ -226,6 +227,7 @@ const Withdrawal_Requests = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
