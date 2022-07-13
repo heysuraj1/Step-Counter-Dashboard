@@ -111,10 +111,9 @@ const SidePanel = () => {
                 </a>
               </li>
             </Link>
-
+{/* 
             <Link href="/ActivationCode">
               <li className="nav-item hovme">
-                {/*//Bootstrap Icons: https://icons.getbootstrap.com/ */}
                 <a className={`nav-link ${isActive("/ActivationCode")}`}>
                   <span className="nav-icon">
                     <svg
@@ -131,7 +130,7 @@ const SidePanel = () => {
                   <span className="nav-link-text">Generate Activation Key</span>
                 </a>
               </li>
-            </Link>
+            </Link> */}
 
             <Link href="/Withdrawal_Requests">
               <li className="nav-item hovme">
