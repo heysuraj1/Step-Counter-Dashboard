@@ -95,7 +95,7 @@ const AddCurrencyEdit = () => {
                   setMediaUrl(e.target.files[0]);
                 }}
                 type="file"
-                class="form-control"
+                className="form-control"
               />
 
               <button className="btn btn-primary text-white mt-5">
