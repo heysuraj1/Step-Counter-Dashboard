@@ -10,6 +10,10 @@ const AddCurrency = new mongoose.Schema(
       type: String,
       required: true,
     },
+    Conversion: {
+      type: String,
+      required: true,
+    },
     WalletAddress: {
       type: String,
       required: true,
@@ -24,4 +28,4 @@ const AddCurrency = new mongoose.Schema(
   }
 );
 
-export default mongoose.models.AddCurrncy || mongoose.model("AddCurrncy", AddCurrency);
+export default mongoose.models.AddCurrnc || mongoose.model("AddCurrnc", AddCurrency);

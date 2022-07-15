@@ -18,22 +18,15 @@ export default async (req, res) => {
   }
 };
 
-
-
-
 const getCurrency = async (req, res) => {
   const mainData = await AddCurrency.find();
   res.status(200).json(mainData);
 };
 
-
-
-
-
 const postCurrency = async (req, res) => {
-  const { TokenName, Symbol, WalletAddress, QRCode } = req.body;
+  const { TokenName, Symbol, WalletAddress, QRCode ,Conversion} = req.body;
 
-  if (!TokenName || !Symbol || !WalletAddress || !QRCode) {
+  if (!TokenName || !Symbol || !WalletAddress || !QRCode ||!Conversion) {
     res.status(222).json({ error: "Please Provide All Credentials" });
   }
 
@@ -42,13 +35,10 @@ const postCurrency = async (req, res) => {
     Symbol,
     WalletAddress,
     QRCode,
+    Conversion
   }).save();
   res.status(200).json(newCurrencyData);
 };
-
-
-
-
 
 const deleteCurrency = async (req, res) => {
   const { id } = req.body;
@@ -56,11 +46,6 @@ const deleteCurrency = async (req, res) => {
   const mainData = await AddCurrency.findByIdAndDelete({ _id: id });
   res.status(200).json({ success: "Currency Deleted Successfully" });
 };
-
-
-
-
-
 
 const updateCurrency = async (req, res) => {
   const { TokenName, Symbol, WalletAddress, QRCode, id } = req.body;

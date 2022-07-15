@@ -13,6 +13,15 @@ const Packages = () => {
       .then((acc) => {
         console.log(acc.data);
         setdatats(acc.data);
+        toast.success("Currency Added", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       })
       .catch((err) => {
         console.log(err);
