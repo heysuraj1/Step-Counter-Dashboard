@@ -97,11 +97,17 @@ const AddCurrencyEdit = () => {
                 type="file"
                 className="form-control"
               />
+              
 
               <button className="btn btn-primary text-white mt-5">
                 SUBMIT
               </button>
+
+
+
+
             </form>
+            <h6 onClick={()=>router.reload()} style={{cursor:"pointer"}} className="mt-4">Cancel</h6>
           </div>
           <div className="col-sm-6"></div>
         </div>

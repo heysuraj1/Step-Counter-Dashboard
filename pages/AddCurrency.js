@@ -83,10 +83,10 @@ const AddCurrency = () => {
             <table className="table table-striped">
               <thead>
                 <tr>
-                  <th scope="col">Sno</th>
+             
                   <th scope="col">Token Name</th>
                   <th scope="col">Symbol</th>
-                  <th scope="col">Convert To Token</th>
+                  <th scope="col">Conversion</th>
                   <th scope="col">Wallet Address</th>
                   <th scope="col">Qr Code</th>
                   <th scope="col"></th>
@@ -98,12 +98,12 @@ const AddCurrency = () => {
                     {datas.map((hit) => {
                       return (
                         <tr key={hit._id}>
-                          <td>Mark</td>
+                         
                           <td>{hit.TokenName}</td>
                           <td>{hit.Symbol}</td>
                           <td>{hit.Conversion}</td>
                           <td>{hit.WalletAddress}</td>
-                          <td>{hit.QRCode.slice(0, 10)}</td>
+                          <td><a target="__blank" href={hit.QRCode}>{hit.QRCode.slice(0, 10)}</a></td>
                           <td>
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
