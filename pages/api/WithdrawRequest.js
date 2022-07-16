@@ -3,10 +3,10 @@ import WithdrawReq from "../../helper/model/WithdrawReq";
 initDB()
 export default async (req, res) => {
   if (req.method === "POST") {
-    const { userUniqueId, WithdrawCoins, ActivationCode } = req.body;
+    const { userUniqueId, WithdrawCoins, ActivationCode ,PaymentWallete} = req.body;
 
     try {
-      if (!userUniqueId || !WithdrawCoins || !ActivationCode) {
+      if (!userUniqueId || !WithdrawCoins || !ActivationCode || !PaymentWallete) {
         return res.status(422).json({ error: "Please Fill All The Colons" });
       }
 
@@ -14,6 +14,7 @@ export default async (req, res) => {
         userUniqueId,
         WithdrawCoins,
         ActivationCode,
+        PaymentWallete
       }).save();
       res.status(201).json(WithdrawRequests);
     } catch (error) {
