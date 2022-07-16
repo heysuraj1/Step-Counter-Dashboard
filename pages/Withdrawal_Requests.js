@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useRouter } from 'next/router'
+
 
 const Withdrawal_Requests = () => {
   const [datas, setDatas] = useState();
   const [showData, setShowData] = useState(false);
+  const [SelectStatus, setSelectStatus] = useState("");
+  const router = useRouter()
+
+
 
   useEffect(() => {
     axios
@@ -18,6 +24,48 @@ const Withdrawal_Requests = () => {
   }, []);
 
   console.log(datas);
+
+
+
+
+  const updateStatus = (id) =>{
+
+    console.log(SelectStatus)
+    console.log(id)
+    
+
+
+    axios.post("/api/Withdrawal/WithdrawalStatusUpdate",{
+      userid:id,
+      status:SelectStatus
+
+    })
+    .then((acc)=>{
+      console.log(acc.data)
+      router.reload()
+
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
 
   return (
     <div className="app-wrapper">
@@ -128,10 +176,9 @@ const Withdrawal_Requests = () => {
                                           <label className="form-label">Status</label>
                                           {/* <input type="text" className="form-control" defaultValue={hit.Status}/> */}
 
-
-
-
-                                         <select className="form-select" aria-label="Default select example">
+                                         <select onChange={(e) => {
+                setSelectStatus(e.target.value);
+              }} className="form-select" aria-label="Default select example">
                                           <option value={hit.Status} selected>{hit.Status}</option>
                                           <option value="Rejected">Rejected</option>
                                           <option value="Missleading Information / Rejected">Missleading Information / Rejected</option>
@@ -145,7 +192,7 @@ const Withdrawal_Requests = () => {
 
                                           <div className="p-2"></div>
                                           <div className="text-center">
-                                          <button data-bs-dismiss="modal" aria-label="Close" className="btn btn-primary text-white">Update</button>
+                                          <button onClick={()=>updateStatus(hit._id)} data-bs-dismiss="modal" aria-label="Close" className="btn btn-primary text-white">Update</button>
                                           </div>
 
 
@@ -212,7 +259,7 @@ const Withdrawal_Requests = () => {
                               >
                                 Close
                               </button>
-                              <button type="button" className="btn btn-primary">
+                              <button  type="button" className="btn btn-primary">
                                 Save changes
                               </button>
                             </div>
